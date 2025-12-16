@@ -228,6 +228,16 @@ body.audio-muted .audio-icon.audio-off {
   50% { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
 }
 
+/* Course Info on Opening */
+.course-info {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.8;
+}
+
 /* === Act Sections === */
 .section-act {
   min-height: 300vh;
@@ -801,10 +811,36 @@ body.audio-muted .audio-icon.audio-off {
 }
 
 .credits {
-  font-size: 0.85rem;
-  opacity: 0.3;
+  text-align: center;
+}
+
+.credits-title {
+  font-size: 0.9rem;
+  opacity: 0.4;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+}
+
+.credits-course {
+  font-size: 0.8rem;
+  opacity: 0.35;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.credits-team {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.credits-thanks {
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.3;
+  margin-top: 1rem;
 }
 
 /* === Reveal Animations === */
