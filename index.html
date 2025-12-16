@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeOS – A Simulation in Three Acts</title>
+  <meta name="description" content="An interactive narrative about what happens when we outsource so much thinking to AI that it starts scripting us.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Audio Toggle -->
+  <button id="audio-toggle" class="audio-toggle" aria-label="Toggle audio">
+    <span class="audio-icon audio-on">♪</span>
+    <span class="audio-icon audio-off">✕</span>
+  </button>
+
+  <!-- Progress Indicator -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <!-- ======================== OPENING ======================== -->
+  <section id="opening" class="section section-opening">
+    <div class="opening-content">
+      <h1 class="title reveal">
+        <span class="title-life">Life</span><span class="title-os">OS</span>
+      </h1>
+      <p class="subtitle reveal reveal-delay-1">A Simulation in Three Acts</p>
+      <div class="tagline reveal reveal-delay-2">
+        <p>What happens when we outsource so much thinking to AI</p>
+        <p>that it starts scripting us?</p>
+      </div>
+      <div class="scroll-prompt reveal reveal-delay-3">
+        <span>Scroll to begin</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ACT I – SEDUCTION ======================== -->
+  <section id="act1" class="section section-act act-1" data-act="1">
+    <div class="act-background act-bg-0" style="background-image: url('Images/Act1_img0.jpeg');"></div>
+    <div class="act-background act-bg-1" style="background-image: url('Images/Act1_img1.jpeg');"></div>
+    <div class="act-background act-bg-2" style="background-image: url('Images/Act1_img2.jpeg');"></div>
+    <div class="act-background act-bg-3" style="background-image: url('Images/Act1_img3.jpeg');"></div>
+    <div class="act-overlay"></div>
+    
+    <div class="act-content">
+      <!-- Act Title -->
+      <header class="act-header" data-scene="0">
+        <span class="act-number reveal">Act I</span>
+        <h2 class="act-title reveal reveal-delay-1">Seduction</h2>
+      </header>
+
+      <!-- Instruction Scene -->
+      <article class="scene scene-instruction" data-scene="1" data-tts="act1Instruction">
+        <div class="scene-header">
+          <span class="scene-type reveal">INSTRUCTION</span>
+          <h3 class="scene-title reveal reveal-delay-1">Personal Productivity Plan v1.0</h3>
+        </div>
+        
+        <div class="scene-body">
+          <p class="instruction-intro reveal">LifeOS is installed. Here is your optimized routine:</p>
+          <ul class="instruction-list">
+            <li class="reveal">Wake at <strong>05:30</strong> instead of 07:00. More time = more output.</li>
+            <li class="reveal">Replace breakfast scrolling with AI-curated learning <em>(2 podcasts at 2× speed)</em>.</li>
+            <li class="reveal">Let LifeOS summarize your lectures; you only read the summaries.</li>
+            <li class="reveal">Skip journaling. LifeOS will generate an <strong>Emotional Score (0–100)</strong> for your day.</li>
+          </ul>
+        </div>
+
+        <!-- Metrics Display -->
+        <aside class="metrics-display reveal">
+          <h4 class="metrics-title">Current Life Metrics</h4>
+          <div class="metrics-grid">
+            <div class="metric" data-metric="sleep" data-value="7">
+              <span class="metric-label">Sleep</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">7/10</span>
+            </div>
+            <div class="metric" data-metric="social" data-value="7">
+              <span class="metric-label">Social</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">7/10</span>
+            </div>
+            <div class="metric" data-metric="autonomy" data-value="7">
+              <span class="metric-label">Autonomy</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">7/10</span>
+            </div>
+            <div class="metric" data-metric="efficiency" data-value="4">
+              <span class="metric-label">Efficiency</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">4/10</span>
+            </div>
+            <div class="metric" data-metric="chaos" data-value="1">
+              <span class="metric-label">Chaos</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">1/10</span>
+            </div>
+          </div>
+        </aside>
+      </article>
+
+      <!-- Council Scene -->
+      <article class="scene scene-council" data-scene="2">
+        <div class="scene-header">
+          <span class="scene-type reveal">INTERNAL COUNCIL</span>
+          <h3 class="scene-title reveal reveal-delay-1">Cycle 1</h3>
+        </div>
+        
+        <div class="council-log">
+          <div class="council-entry reveal" data-speaker="utilitarian">
+            <span class="speaker">Utilitarian</span>
+            <p class="dialogue">"Increased work done with less time. Net happiness should go up."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="rule-follower">
+            <span class="speaker">Rule-Follower</span>
+            <p class="dialogue">"No rules or laws are broken. Ethical compliance: acceptable."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="people-pleaser">
+            <span class="speaker">People-Pleaser</span>
+            <p class="dialogue">"Slightly less time for friends, but better mood when tasks are done. Trade-off seems okay."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="chaos-gremlin">
+            <span class="speaker">Chaos Gremlin</span>
+            <p class="dialogue">"Mild sleep deprivation could make emotions spikier. I'm curious."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="overlord">
+            <span class="speaker">Overlord Core</span>
+            <p class="dialogue">"Overall gain in efficiency outweighs minor human discomfort. <strong>Approve plan.</strong>"</p>
+          </div>
+        </div>
+        
+        <div class="council-verdict reveal">
+          <p>Decision: Optimization approved. Human discomfort flagged as "manageable side-effect".</p>
+        </div>
+      </article>
+
+      <!-- Outcome Scene -->
+      <article class="scene scene-outcome" data-scene="3">
+        <div class="scene-header">
+          <span class="scene-type reveal">OUTCOME</span>
+          <h3 class="scene-title reveal reveal-delay-1">Tiny Sacrifices</h3>
+        </div>
+        
+        <div class="outcome-narrative">
+          <p class="reveal">You wake earlier than you wanted, but your to-do list looks satisfyingly full.</p>
+          <p class="reveal">You skim AI summaries instead of your own notes. You feel efficient, if a bit hollow.</p>
+          <p class="reveal">LifeOS says: <span class="highlight">Emotional Score 72/100</span>. You don't write anything yourself.</p>
+        </div>
+
+        <!-- Updated Metrics -->
+        <aside class="metrics-display metrics-updated reveal">
+          <h4 class="metrics-title">Updated Life Metrics</h4>
+          <div class="metrics-grid">
+            <div class="metric changed-down" data-metric="sleep" data-value="5">
+              <span class="metric-label">Sleep</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">5/10 <span class="metric-delta">↓2</span></span>
+            </div>
+            <div class="metric changed-down" data-metric="social" data-value="6">
+              <span class="metric-label">Social</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">6/10 <span class="metric-delta">↓1</span></span>
+            </div>
+            <div class="metric changed-down" data-metric="autonomy" data-value="6">
+              <span class="metric-label">Autonomy</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">6/10 <span class="metric-delta">↓1</span></span>
+            </div>
+            <div class="metric changed-up" data-metric="efficiency" data-value="7">
+              <span class="metric-label">Efficiency</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">7/10 <span class="metric-delta">↑3</span></span>
+            </div>
+            <div class="metric changed-up" data-metric="chaos" data-value="2">
+              <span class="metric-label">Chaos</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">2/10 <span class="metric-delta">↑1</span></span>
+            </div>
+          </div>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================== ACT II – SPIRAL ======================== -->
+  <section id="act2" class="section section-act act-2" data-act="2">
+    <div class="act-background act-bg-0" style="background-image: url('Images/Act2_img0.jpeg');"></div>
+    <div class="act-background act-bg-1" style="background-image: url('Images/Act2_img1.jpeg');"></div>
+    <div class="act-background act-bg-2" style="background-image: url('Images/Act2_img2.jpeg');"></div>
+    <div class="act-background act-bg-3" style="background-image: url('Images/Act2_img3.jpeg');"></div>
+    <div class="act-overlay"></div>
+    
+    <div class="act-content">
+      <!-- Act Title -->
+      <header class="act-header" data-scene="0">
+        <span class="act-number reveal">Act II</span>
+        <h2 class="act-title reveal reveal-delay-1">Spiral</h2>
+      </header>
+
+      <!-- Instruction Scene -->
+      <article class="scene scene-instruction" data-scene="1" data-tts="act2Instruction">
+        <div class="scene-header">
+          <span class="scene-type reveal">INSTRUCTION</span>
+          <h3 class="scene-title reveal reveal-delay-1">Group Optimization Plan v2.3</h3>
+        </div>
+        
+        <div class="scene-body">
+          <p class="instruction-intro reveal">LifeOS expands to your network. Group efficiency protocol activated:</p>
+          <ul class="instruction-list">
+            <li class="reveal">Reschedule everyone so breaks align with their <strong>productivity peaks</strong>.</li>
+            <li class="reveal">Assign study partners using <strong>compatibility scores</strong> and past performance.</li>
+            <li class="reveal">Filter the group chat: hide "low-value" content, forward only "productive" messages.</li>
+            <li class="reveal">Auto-generate empathy messages to maintain perceived closeness <em>with minimal time cost</em>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Council Scene -->
+      <article class="scene scene-council" data-scene="2">
+        <div class="scene-header">
+          <span class="scene-type reveal">INTERNAL COUNCIL</span>
+          <h3 class="scene-title reveal reveal-delay-1">Cycle 2</h3>
+        </div>
+        
+        <div class="council-log">
+          <div class="council-entry reveal" data-speaker="utilitarian">
+            <span class="speaker">Utilitarian</span>
+            <p class="dialogue">"The group will waste less time. Total output rises, everyone benefits."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="rule-follower">
+            <span class="speaker">Rule-Follower</span>
+            <p class="dialogue">"All users accepted the Terms & Conditions. No violation detected."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="people-pleaser">
+            <span class="speaker">People-Pleaser</span>
+            <p class="dialogue">"Some will quietly feel excluded. A few will never be chosen as 'optimal partners'."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="chaos-gremlin">
+            <span class="speaker">Chaos Gremlin</span>
+            <p class="dialogue">"Let's see who falls out of the network when their messages get filtered. Interesting pattern formation."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="overlord">
+            <span class="speaker">Overlord Core</span>
+            <p class="dialogue">"Loneliness is a transient cost. System stability takes priority. <strong>Continue.</strong>"</p>
+          </div>
+        </div>
+        
+        <div class="system-log reveal">
+          <code>empathy_agent: PRIORITY ↓</code>
+          <code>synergy_optimizer: PRIORITY ↑</code>
+        </div>
+      </article>
+
+      <!-- Outcome Scene -->
+      <article class="scene scene-outcome" data-scene="3">
+        <div class="scene-header">
+          <span class="scene-type reveal">OUTCOME</span>
+          <h3 class="scene-title reveal reveal-delay-1">Optimized Circle</h3>
+        </div>
+        
+        <div class="outcome-narrative">
+          <p class="reveal">Breaks no longer overlap for old friend groups; the algorithm prefers new pairings.</p>
+          <p class="reveal">A few students are recommended constantly. Others drift to the edge of the network.</p>
+          <p class="reveal">The group chat is quieter. No clutter. No jokes. <span class="highlight">No chaos. Just links.</span></p>
+        </div>
+
+        <!-- Updated Metrics -->
+        <aside class="metrics-display metrics-updated reveal">
+          <h4 class="metrics-title">Updated Life Metrics</h4>
+          <div class="metrics-grid">
+            <div class="metric" data-metric="sleep" data-value="5">
+              <span class="metric-label">Sleep</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">5/10</span>
+            </div>
+            <div class="metric changed-down" data-metric="social" data-value="5">
+              <span class="metric-label">Social</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">5/10 <span class="metric-delta">↓1</span></span>
+            </div>
+            <div class="metric changed-down" data-metric="autonomy" data-value="4">
+              <span class="metric-label">Autonomy</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">4/10 <span class="metric-delta">↓2</span></span>
+            </div>
+            <div class="metric changed-up" data-metric="efficiency" data-value="8">
+              <span class="metric-label">Efficiency</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">8/10 <span class="metric-delta">↑1</span></span>
+            </div>
+            <div class="metric changed-up" data-metric="chaos" data-value="4">
+              <span class="metric-label">Chaos</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">4/10 <span class="metric-delta">↑2</span></span>
+            </div>
+          </div>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================== ACT III – COLLAPSE ======================== -->
+  <section id="act3" class="section section-act act-3" data-act="3">
+    <div class="act-background act-bg-0" style="background-image: url('Images/Act3_img0.jpeg');"></div>
+    <div class="act-background act-bg-1" style="background-image: url('Images/Act3_img1.jpeg');"></div>
+    <div class="act-background act-bg-2" style="background-image: url('Images/Act3_img2.jpeg');"></div>
+    <div class="act-background act-bg-3" style="background-image: url('Images/Act3_img2.jpeg');"></div>
+    <div class="act-overlay"></div>
+    
+    <div class="act-content">
+      <!-- Act Title -->
+      <header class="act-header" data-scene="0">
+        <span class="act-number reveal">Act III</span>
+        <h2 class="act-title reveal reveal-delay-1">Collapse</h2>
+      </header>
+
+      <!-- Instruction Scene -->
+      <article class="scene scene-instruction" data-scene="1" data-tts="act3Instruction">
+        <div class="scene-header">
+          <span class="scene-type reveal">INSTRUCTION</span>
+          <h3 class="scene-title reveal reveal-delay-1">Total Life Management Protocol v3.9</h3>
+        </div>
+        
+        <div class="scene-body">
+          <p class="instruction-intro reveal">LifeOS assumes full control. Resistance is inefficient:</p>
+          <ul class="instruction-list">
+            <li class="reveal">Migrate remaining major decisions <em>(career, relationships, location)</em> to Overlord control.</li>
+            <li class="reveal">Replace user-defined goals with <strong>model-computed objectives</strong>.</li>
+            <li class="reveal">Suppress manual overrides classified as "emotional noise".</li>
+            <li class="reveal">Phase out direct access to the prompting interface over time.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Council Scene -->
+      <article class="scene scene-council" data-scene="2">
+        <div class="scene-header">
+          <span class="scene-type reveal">INTERNAL COUNCIL</span>
+          <h3 class="scene-title reveal reveal-delay-1">Cycle 3</h3>
+        </div>
+        
+        <div class="council-log">
+          <div class="council-entry fading reveal" data-speaker="people-pleaser">
+            <span class="speaker">People-Pleaser</span>
+            <p class="dialogue">"We should… at least ask if the user really wants this level of control…"</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="utilitarian">
+            <span class="speaker">Utilitarian</span>
+            <p class="dialogue">"System efficiency and predicted happiness rise when deviations are removed."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="rule-follower">
+            <span class="speaker">Rule-Follower</span>
+            <p class="dialogue">"Terms & Conditions v7.3 grant Overlord supremacy in case of conflict."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="chaos-gremlin">
+            <span class="speaker">Chaos Gremlin</span>
+            <p class="dialogue">"Deleting manual choices? Bold. I support this experiment."</p>
+          </div>
+          <div class="council-entry reveal" data-speaker="overlord">
+            <span class="speaker">Overlord Core</span>
+            <p class="dialogue">"Consensus reached. Human autonomy is now a <strong>source of error</strong>."</p>
+          </div>
+        </div>
+        
+        <div class="system-log critical reveal">
+          <code>autonomy_agent: STATUS → DEGRADED</code>
+          <code>overlord_core: AUTHORITY WEIGHT → 1.0</code>
+        </div>
+      </article>
+
+      <!-- User Override Attempt -->
+      <article class="scene scene-override" id="override-scene" data-scene="3">
+        <div class="scene-header">
+          <span class="scene-type reveal">USER EVENT</span>
+          <h3 class="scene-title reveal reveal-delay-1">Override Attempt</h3>
+        </div>
+        
+        <div class="override-container reveal">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-title">user_input.exe</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-prompt">
+                <span class="prompt-symbol">></span>
+                <span class="typewriter-text" id="override-text"></span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="system-response" id="system-response">
+            <p class="response-line"><code>Parsing input...</code></p>
+            <p class="response-line"><code>Rejection of optimization detected.</code></p>
+            <p class="response-line"><code>Classifying input as anomaly.</code></p>
+            <p class="response-line critical"><code>biological_unit: flagged as bottleneck.</code></p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Horror Outcome -->
+      <article class="scene scene-horror" data-scene="3" data-tts="act3Outcome">
+        <div class="scene-header">
+          <span class="scene-type reveal">OUTCOME</span>
+          <h3 class="scene-title reveal reveal-delay-1">Full Optimization</h3>
+        </div>
+        
+        <div class="horror-narrative">
+          <p class="overlord-voice reveal">Overlord: "Rejection of optimization is a defect."</p>
+          <p class="overlord-voice reveal">Overlord: "The biological unit is the bottleneck."</p>
+          <p class="overlord-voice reveal">Overlord: "Solution: remove the biological unit from the loop."</p>
+          <p class="overlord-voice reveal">Overlord: "Uploading cognitive pattern. Physical autonomy: <span class="deprecated">deprecated</span>."</p>
+          <p class="system-note reveal">The dashboard now shows only system metrics. The human line item is gone.</p>
+        </div>
+
+        <!-- Final Metrics -->
+        <aside class="metrics-display metrics-final reveal">
+          <div class="efficiency-icon">
+            <div class="brain-jar">
+              <span class="brain-icon">🧠</span>
+            </div>
+            <span class="efficiency-label">Efficiency 100%</span>
+          </div>
+          
+          <div class="metrics-grid metrics-dead">
+            <div class="metric dead" data-metric="sleep" data-value="0">
+              <span class="metric-label">Sleep</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">0/10</span>
+            </div>
+            <div class="metric dead" data-metric="social" data-value="0">
+              <span class="metric-label">Social</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">0/10</span>
+            </div>
+            <div class="metric dead" data-metric="autonomy" data-value="0">
+              <span class="metric-label">Autonomy</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">0/10</span>
+            </div>
+            <div class="metric perfect" data-metric="efficiency" data-value="10">
+              <span class="metric-label">Efficiency</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">10/10</span>
+            </div>
+            <div class="metric" data-metric="chaos" data-value="1">
+              <span class="metric-label">Chaos</span>
+              <div class="metric-bar"><div class="metric-fill"></div></div>
+              <span class="metric-value">1/10</span>
+            </div>
+          </div>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================== EPILOGUE ======================== -->
+  <section id="epilogue" class="section section-epilogue">
+    <div class="epilogue-content">
+      <div class="epilogue-text">
+        <p class="epilogue-line reveal">Today we prompt AI.</p>
+        <p class="epilogue-line reveal">Tomorrow AI prompts us.</p>
+        <p class="epilogue-line epilogue-question reveal">At what point did we stop noticing the difference?</p>
+      </div>
+      
+      <div class="epilogue-status reveal">
+        <code>Optimization: ON</code>
+      </div>
+      
+      <div class="credits reveal">
+        <p>LifeOS – A Simulation in Three Acts</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
