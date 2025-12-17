@@ -18,7 +18,9 @@ Open `index.html` in a modern browser. Enable audio for the full experience.
 
 ### Team
 
+- Mehrshad Mirmohammadi
 - Cédric Girardin
-- Partha Sarathi Purkayastha
 - Martin Shen
+- Partha Sarathi Purkayastha
+
 
