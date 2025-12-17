@@ -693,6 +693,88 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// ============ Scene Navigation ============
+const sceneNav = {
+  prevBtn: document.getElementById('nav-prev'),
+  nextBtn: document.getElementById('nav-next'),
+  breakpoints: [],
+  currentIndex: 0,
+  
+  init() {
+    if (!this.prevBtn || !this.nextBtn) return;
+    
+    // Collect all scene breakpoints (sections and scene articles)
+    this.breakpoints = [
+      document.getElementById('opening'),
+      ...document.querySelectorAll('.section-act > .act-header'),
+      ...document.querySelectorAll('.scene'),
+      document.getElementById('epilogue')
+    ].filter(el => el !== null);
+    
+    // Sort by DOM position
+    this.breakpoints.sort((a, b) => {
+      const rectA = a.getBoundingClientRect();
+      const rectB = b.getBoundingClientRect();
+      return (rectA.top + window.scrollY) - (rectB.top + window.scrollY);
+    });
+    
+    // Event listeners
+    this.prevBtn.addEventListener('click', () => this.goToPrev());
+    this.nextBtn.addEventListener('click', () => this.goToNext());
+    
+    // Update on scroll
+    window.addEventListener('scroll', () => this.updateButtons(), { passive: true });
+    this.updateButtons();
+  },
+  
+  getCurrentIndex() {
+    const scrollY = window.scrollY + window.innerHeight * 0.3;
+    let index = 0;
+    
+    for (let i = 0; i < this.breakpoints.length; i++) {
+      const rect = this.breakpoints[i].getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      if (scrollY >= top) {
+        index = i;
+      }
+    }
+    
+    return index;
+  },
+  
+  updateButtons() {
+    this.currentIndex = this.getCurrentIndex();
+    this.prevBtn.disabled = this.currentIndex === 0;
+    this.nextBtn.disabled = this.currentIndex >= this.breakpoints.length - 1;
+  },
+  
+  goToPrev() {
+    const currentIndex = this.getCurrentIndex();
+    if (currentIndex > 0) {
+      this.scrollToBreakpoint(currentIndex - 1);
+    }
+  },
+  
+  goToNext() {
+    const currentIndex = this.getCurrentIndex();
+    if (currentIndex < this.breakpoints.length - 1) {
+      this.scrollToBreakpoint(currentIndex + 1);
+    }
+  },
+  
+  scrollToBreakpoint(index) {
+    const target = this.breakpoints[index];
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+};
+
+// Initialize scene navigation
+document.addEventListener('DOMContentLoaded', () => {
+  sceneNav.init();
+});
+
 // ============ Visibility Change (Pause Audio) ============
 document.addEventListener('visibilitychange', () => {
   if (document.hidden && state.audioEnabled) {
@@ -703,6 +785,58 @@ document.addEventListener('visibilitychange', () => {
 });
 
 // ============ Terms & Conditions Modal ============
+// ============ Loading Screen ============
+const loadingScreen = {
+  screen: document.getElementById('loading-screen'),
+  text: document.getElementById('loading-text'),
+  status: document.getElementById('loading-status'),
+  
+  statusMessages: [
+    'Initializing',
+    'Scanning preferences',
+    'Mapping neural patterns',
+    'Calibrating optimization',
+    'Syncing life parameters',
+    'Connection established'
+  ],
+  
+  show() {
+    if (!this.screen) return;
+    this.screen.classList.remove('hidden');
+  },
+  
+  async runSequence() {
+    // Run through status messages
+    for (let i = 0; i < this.statusMessages.length; i++) {
+      await this.delay(400 + Math.random() * 300);
+      if (this.status) {
+        this.status.textContent = this.statusMessages[i];
+      }
+    }
+    
+    // Final delay before hiding
+    await this.delay(600);
+    this.hide();
+  },
+  
+  hide() {
+    if (!this.screen) return;
+    this.screen.classList.add('hidden');
+    
+    // Re-enable body scroll
+    document.body.style.overflow = '';
+    
+    // Remove from DOM after fade
+    setTimeout(() => {
+      this.screen.remove();
+    }, 800);
+  },
+  
+  delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+};
+
 const termsModal = {
   modal: document.getElementById('terms-modal'),
   body: document.getElementById('terms-body'),
@@ -741,16 +875,17 @@ const termsModal = {
   accept() {
     if (!this.hasScrolledToBottom) return;
     
-    // Hide modal with animation
+    // Hide terms modal
     this.modal.classList.add('hidden');
-    
-    // Re-enable body scroll
-    document.body.style.overflow = '';
     
     // Remove modal from DOM after animation
     setTimeout(() => {
       this.modal.remove();
     }, 500);
+    
+    // Show loading screen and run sequence
+    loadingScreen.show();
+    loadingScreen.runSequence();
   }
 };
 

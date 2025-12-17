@@ -129,6 +129,20 @@
     </div>
   </div>
 
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen hidden">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <span class="loading-life">Life</span><span class="loading-os">OS</span>
+      </div>
+      <p class="loading-text" id="loading-text">Connecting LifeOS with your life...</p>
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+      </div>
+      <p class="loading-status" id="loading-status">Initializing</p>
+    </div>
+  </div>
+
   <!-- Audio Toggle -->
   <button id="audio-toggle" class="audio-toggle" aria-label="Toggle audio">
     <span class="audio-icon audio-on">♪</span>
@@ -140,6 +154,12 @@
     <div class="progress-fill" id="progress-fill"></div>
   </div>
 
+  <!-- Scene Navigation -->
+  <div class="scene-nav">
+    <button id="nav-prev" class="nav-btn" aria-label="Previous scene" disabled>↑</button>
+    <button id="nav-next" class="nav-btn" aria-label="Next scene">↓</button>
+  </div>
+
   <!-- ======================== OPENING ======================== -->
   <section id="opening" class="section section-opening">
     <div class="opening-content">
@@ -148,8 +168,8 @@
       </h1>
       <p class="subtitle reveal reveal-delay-1">A Simulation in Three Acts</p>
       <div class="tagline reveal reveal-delay-2">
-        <p>What happens when we outsource so much thinking to AI</p>
-        <p>that it starts scripting us?</p>
+        <p>If guidance becomes habit, and habit becomes default,</p>
+        <p>where does agency go?</p>
       </div>
       <div class="scroll-prompt reveal reveal-delay-3">
         <span>Scroll to begin</span>
@@ -592,7 +612,7 @@
       <div class="epilogue-text">
         <p class="epilogue-line reveal">Today we prompt AI.</p>
         <p class="epilogue-line reveal">Tomorrow AI prompts us.</p>
-        <p class="epilogue-line epilogue-question reveal">At what point did we stop noticing the difference?</p>
+        <p class="epilogue-line epilogue-question epilogue-horror reveal">At what point did we stop noticing the difference?</p>
       </div>
       
       <div class="epilogue-status reveal">
