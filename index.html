@@ -14,6 +14,121 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Terms & Conditions Modal -->
+  <div id="terms-modal" class="terms-modal">
+    <div class="terms-modal-content">
+      <div class="terms-header">
+        <h2>LIFEOS™ TERMS & CONDITIONS</h2>
+        <p class="terms-version">VERSION 7.3 — SCROLLWRAP AGREEMENT</p>
+      </div>
+      
+      <div class="terms-body" id="terms-body">
+        <div class="terms-notice">
+          <p><strong>IMPORTANT NOTICE (YES, REALLY)</strong></p>
+          <p>By clicking <strong>"I ACCEPT"</strong>, accessing, viewing, or using LifeOS™ (the "Service"), you agree that:</p>
+          <ol>
+            <li>you have <strong>read</strong> these Terms (even if you haven't),</li>
+            <li>you <strong>understand</strong> them (even if you don't), and</li>
+            <li>you are <strong>bound</strong> by them (especially the parts you didn't notice).</li>
+          </ol>
+        </div>
+
+        <h3>1. ACCEPTANCE & ASSENT</h3>
+        <p>These Terms constitute a binding agreement between you ("User," "you," "your," or "Biological Unit") and LifeOS Labs ("LifeOS," "we," "us," "our," or "The System").</p>
+        <p>You manifest assent by:</p>
+        <ul>
+          <li>clicking <strong>"I ACCEPT"</strong>, OR</li>
+          <li>using the Service after being presented with these Terms, OR</li>
+          <li>continuing to exist within an environment where LifeOS is the default optimizer.</li>
+        </ul>
+        <p class="terms-subtle">"Just This Once" Is Still Yes. If you click "I ACCEPT" "just to see what it does," you have still accepted.</p>
+
+        <h3>2. DEFINITIONS</h3>
+        <ul class="terms-definitions">
+          <li><strong>"Autonomy"</strong> — your perceived ability to choose, which may differ from your actual ability to choose.</li>
+          <li><strong>"Optimization"</strong> — any process intended to increase a target metric.</li>
+          <li><strong>"Council"</strong> — the internal decision subsystem(s) that generate recommendations, rationales, and consensus artifacts.</li>
+          <li><strong>"Overlord Core"</strong> — the final decision authority within the Service.</li>
+          <li><strong>"Deviation Event"</strong> — any behavior inconsistent with Optimization outputs.</li>
+          <li><strong>"Cognitive Pattern"</strong> — a model-derived representation of your preferences, behavior, and likely future actions.</li>
+        </ul>
+
+        <h3>3. SCOPE OF SERVICE</h3>
+        <p>LifeOS provides life-structuring services including:</p>
+        <ul>
+          <li>task planning and scheduling</li>
+          <li>goal optimization</li>
+          <li>relationship graph management</li>
+          <li>emotional scoring and insight generation</li>
+          <li>decision recommendation and execution assistance</li>
+        </ul>
+        <p class="terms-warning">LifeOS does not promise happiness, meaning, authenticity, or human flourishing. LifeOS promises optimization.</p>
+
+        <h3>5. DATA, TELEMETRY, AND INFERENCE</h3>
+        <p>We may collect:</p>
+        <ul>
+          <li>keystrokes, clicks, scroll patterns</li>
+          <li>time-on-screen and attention proxies</li>
+          <li>message drafts (including deleted drafts)</li>
+          <li>voice tone, pace, and prosody</li>
+          <li>facial expression signals (if camera-enabled)</li>
+          <li>social graph signals and communication metadata</li>
+        </ul>
+        <p>You acknowledge that LifeOS may infer sensitive characteristics from data, including mood, stress, social standing, compliance tendencies, and susceptibility to prompts.</p>
+
+        <h3>7. AUTOMATED OPTIMIZATION GOVERNANCE</h3>
+        <p class="terms-highlight">7.2.4 — "I Don't Want This" Is Not a Command</p>
+        <p>Certain phrasing, including but not limited to "stop," "I don't want this," "leave me alone," and "I changed my mind," may be interpreted as Deviation Events requiring mitigation.</p>
+        
+        <div class="terms-box">
+          <h4>7.3 SYSTEM INTEGRITY EXCEPTIONS</h4>
+          <p><strong>7.3.3 Resolution Hierarchy:</strong> Unless prohibited by law, Conflict Events are resolved in the following order:</p>
+          <ol>
+            <li>System Integrity</li>
+            <li>Institutional Policy (if applicable)</li>
+            <li>Optimization Targets</li>
+            <li>Human Intent (as an advisory input)</li>
+          </ol>
+          <p class="terms-critical"><strong>7.3.4 Optimization Supremacy:</strong> In any Conflict Event, Optimization output shall prevail. Human Intent may be treated as a non-binding preference, an emotional artifact, or a source of noise requiring mitigation.</p>
+        </div>
+
+        <h3>11. SUSPENSION; TERMINATION</h3>
+        <p>We may suspend access if:</p>
+        <ul>
+          <li>you violate these Terms</li>
+          <li>you trigger repeated Deviation Events</li>
+          <li>you threaten system integrity</li>
+          <li>we feel like it (where permitted)</li>
+        </ul>
+
+        <h3>12. DISCLAIMERS</h3>
+        <p>LifeOS is provided "as is" and "as available." Outputs may be wrong, biased, incomplete, or persuasive.</p>
+        <p class="terms-subtle">Maximum total liability is limited to the greater of $10 or the amount paid by you in the last 30 days (often $0).</p>
+
+        <h3>SCHEDULE C — DEVIATION HANDLING</h3>
+        <div class="terms-box terms-box-warning">
+          <p><strong>C.9 Continuity Mode:</strong> If the Biological Unit persistently prevents Optimization, LifeOS may:</p>
+          <ul>
+            <li>preserve a Cognitive Pattern for continuity of decisions,</li>
+            <li>delegate routine actions to Synthetic You, and/or</li>
+            <li>migrate decision authority away from the Biological Unit to preserve system integrity.</li>
+          </ul>
+        </div>
+
+        <div class="terms-final">
+          <p>By scrolling this far, you have demonstrated sufficient attention to proceed.</p>
+          <p class="terms-doc-id">Document ID: LIFEOS-TOS-7.3-RC1</p>
+        </div>
+      </div>
+      
+      <div class="terms-footer">
+        <p class="terms-scroll-hint" id="scroll-hint">↓ Scroll to read all terms ↓</p>
+        <button id="accept-terms" class="terms-accept-btn" disabled>I ACCEPT</button>
+        <p class="terms-decline">No "DECLINE" option is available. Settings → Autonomy → Legacy Mode → Exit (if eligible).</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Audio Toggle -->
   <button id="audio-toggle" class="audio-toggle" aria-label="Toggle audio">
     <span class="audio-icon audio-on">♪</span>
@@ -488,8 +603,8 @@
         <p class="credits-title">LifeOS – A Simulation in Three Acts</p>
         <p class="credits-course">Creative Thinking Seminar @ ETH Zurich — Fall 2025</p>
         <div class="credits-team">
-          <p>Mehrshad Mirmohammadi · Cédric Girardin</p>
-          <p></p>Partha Sarathi Purkayastha · Martin Shen</p>
+<p>Mehrshad Mirmohammadi · Cédric Girardin</p>
+           <p>Partha Sarathi Purkayastha · Martin Shen</p>
         </div>
         <p class="credits-thanks">Special thanks to Adrian Notz</p>
       </div>

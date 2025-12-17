@@ -702,3 +702,60 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// ============ Terms & Conditions Modal ============
+const termsModal = {
+  modal: document.getElementById('terms-modal'),
+  body: document.getElementById('terms-body'),
+  acceptBtn: document.getElementById('accept-terms'),
+  scrollHint: document.getElementById('scroll-hint'),
+  hasScrolledToBottom: false,
+  
+  init() {
+    if (!this.modal || !this.body || !this.acceptBtn) return;
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    
+    // Listen for scroll in terms body
+    this.body.addEventListener('scroll', () => this.checkScroll());
+    
+    // Accept button click
+    this.acceptBtn.addEventListener('click', () => this.accept());
+    
+    // Check initial scroll state
+    this.checkScroll();
+  },
+  
+  checkScroll() {
+    const { scrollTop, scrollHeight, clientHeight } = this.body;
+    const scrolledPercent = (scrollTop + clientHeight) / scrollHeight;
+    
+    // Enable button when scrolled to 90% or more
+    if (scrolledPercent >= 0.9 && !this.hasScrolledToBottom) {
+      this.hasScrolledToBottom = true;
+      this.acceptBtn.disabled = false;
+      this.scrollHint.classList.add('hidden');
+    }
+  },
+  
+  accept() {
+    if (!this.hasScrolledToBottom) return;
+    
+    // Hide modal with animation
+    this.modal.classList.add('hidden');
+    
+    // Re-enable body scroll
+    document.body.style.overflow = '';
+    
+    // Remove modal from DOM after animation
+    setTimeout(() => {
+      this.modal.remove();
+    }, 500);
+  }
+};
+
+// Initialize terms modal
+document.addEventListener('DOMContentLoaded', () => {
+  termsModal.init();
+});
+
